@@ -1,0 +1,2 @@
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.UnitTest\obj\Release\FashionShop.UnitTest.csproj.AssemblyReference.cache
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.UnitTest\obj\Release\FashionShop.UnitTest.csproj.CoreCompileInputs.cache

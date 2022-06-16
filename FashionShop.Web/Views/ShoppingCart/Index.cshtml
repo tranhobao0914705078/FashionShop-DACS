@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/shared/Layouts.cshtml";
+}
+@section footerJS{
+    <script src="~/Assets/client/js/controller/shoppingCart.js"></script>
+}
+<div class="single_top">
+    <div class="single_grid">
+        <div id="cartContent">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>STT</td>
+                        <td>Tên Sản Phẩm</td>
+                        <td>Hình Ảnh</td>
+                        <td>Giá</td>
+                        <td>Số Lượng</td>
+                        <td>Thành Tiền</td>
+                        <td>Xóa</td>
+                    </tr>
+                </thead>
+                <tbody id="cartBody"></tbody>
+            </table>
+            <button class="btn btn-success" id="btnContinue">Tiếp Tục Mua Hàng</button>
+            <button class="btn btn-danger" id="btnDeleteAll">Xóa Giỏ Hàng</button>
+            <button class="btn" id="btnCheckout" style="background-color: #0094ff;">Thanh Toán</button>
+            <div class="pull-right">
+                Tổng Tiền: <span id="lblTotalOrder"></span> VND
+            </div>
+        </div>
+        @*check-out*@
+        <div id="divCheckout" style="display: none;">
+            <div class="reservation_top">
+                <div class="contact_right">
+                    <h3>Thanh Toán</h3>
+                    <div class="contact-form">
+                        <form method="post">
+                            @if (Request.IsAuthenticated)
+                            {
+                                <label>
+                                    <input type="checkbox" id="chkUserLoginInfo" />
+                                    Sử dụng thông tin đăng nhập
+                                </label>
+                            }
+                            <p style="color: #000; font-size: 18px; font-weight: 700;">Họ Tên</p>
+                            <input type="text" style="color: #000;" class="textbox" id="txtName" name="name" placeholder="Họ tên">
+                            <p style="color: #000; font-size: 18px; font-weight: 700;">Địa Chỉ</p>
+                            <input type="text" style="color: #000;" class="textbox" id="txtAddress" name="address" placeholder="Địa chỉ">
+                            <p style="color: #000; font-size: 18px; font-weight: 700;">Email</p>
+                            <input type="text" style="color: #000;" class="textbox" id="txtEmail" name="email" placeholder="Email">
+                            <p style="color: #000; font-size: 18px; font-weight: 700;">Điện Thoại</p>
+                            <input type="text" style="color: #000;" class="textbox" id="txtPhone" name="phone" placeholder="Điện thoại">
+                            <p style="color: #000; font-size: 18px; font-weight: 700;">Ghi Chú</p>
+                            <textarea value="Message" style="color: #000;" id="txtMessage" placeholder="Ghi Chú"></textarea>
+                            <input type="button" id="btnCreateOrder" value="Thanh Toán">
+                            <div class="clearfix"> </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*End check-out*@
+        <div class="clearfix"> </div>
+    </div>
+
+</div>
+<script id="tplCart" type="x-tmpl-mustache">
+  <tr>
+    <td>{{ProductId}}</td>
+    <td>{{ProductName}}</td>
+    <td><img src="{{Image}}" height="50" /></td>
+    <td>{{PriceF}}</td>
+    <td><input type="number" data-id="{{ProductId}}" data-price="{{Price}}" value="{{Quantity}}" class="input txtQuantity" /></td>
+    <td id="amount_{{ProductId}}">{{Amount}}</td>
+    <td><button class="btn btn-danger btnDeleteItem" data-id="{{ProductId}}">Xóa</button></td>
+  </tr>
+</script>

@@ -1,0 +1,16 @@
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Model\bin\Release\FashionShop.Model.dll.config
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Model\bin\Release\FashionShop.Model.dll
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Model\bin\Release\FashionShop.Model.pdb
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Model\bin\Release\EntityFramework.dll
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Model\bin\Release\EntityFramework.SqlServer.dll
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Model\bin\Release\Microsoft.AspNet.Identity.Core.dll
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Model\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Model\bin\Release\EntityFramework.xml
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Model\bin\Release\EntityFramework.SqlServer.xml
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Model\bin\Release\Microsoft.AspNet.Identity.Core.xml
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Model\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Model\obj\Release\FashionShop.Model.csproj.CoreCompileInputs.cache
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Model\obj\Release\FashionShop.Model.csproj.CopyComplete
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Model\obj\Release\FashionShop.Model.dll
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Model\obj\Release\FashionShop.Model.pdb
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Model\obj\Release\FashionShop.Model.csproj.AssemblyReference.cache

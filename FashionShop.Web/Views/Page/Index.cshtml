@@ -1,0 +1,21 @@
+﻿@model FashionShop.Web.Models.PageViewModel
+@{
+    ViewBag.Title = @Model.Name;
+    ViewBag.MetaKeyword = @Model.Name;
+    ViewBag.MetaDescription = Model.Name;
+    Layout = "~/Views/shared/Layouts.cshtml";
+}
+
+<div class="single_top">
+    <div class="single_grid">
+        <h1 style="color: black; font-size: 3rem; font-weight: 700; line-height: 2rem;">@Model.Name</h1>
+        @Html.Raw(Model.Content)
+        <div class="clearfix"> </div>
+    </div>
+    <img src="~/Assets/client/images/bg.jpg" style="width: 100%;" alt="Alternate Text" />
+    <hr />
+    <p style="color: black; font-size: 3rem; font-weight: bold;">Thông tin liên hệ</p>
+    <p style="color: black; font-size: 2rem; font-weight: 700;">Website: <a href="@Url.Action("Index", "Home")">fashionshop.com</a></p>
+    <p style="color: black; font-size: 2rem; font-weight: 700;">Phone: <a href="tel: +84 914705078">+84 914705078</a></p>
+    <p style="color: black; font-size: 2rem; font-weight: 700;">Email: <a href="mailto:tranhobao1812@gmail.com">tranhobao1812@gmail.com</a></p>
+</div>

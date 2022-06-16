@@ -1,0 +1,77 @@
+﻿<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Danh Sách Hóa Đơn</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
+                    <li class="breadcrumb-item"><a href="#">Danh sách hóa đơn</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<section class=" content">
+    <div class="card">
+        <div class="card-header with-border">
+            <h3 class="card-title">Danh Sách Hóa Đơn</h3>
+            <div class=" card-tools pull-right">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="keyword" placeholder="Nhập Tên Khách Hàng...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" style="margin: 0 20px;" type="button" ng-click="search()">Tìm kiếm</button>
+                        </span>
+                    </div><!-- /input-group -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="width: 5%">ID</th>
+                                <th style="width: 15%">Tên Người Đặt</th>
+                                <th style="width: 10%">Email</th>
+                                <th style="width: 40%">Địa Chỉ</th>
+                                <th style="width: 10%">Số Điện Thoại</th>
+                                <th style="width: 10%">Trạng Thái</th>
+                                <th style="width: 10%">Chức Năng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in order">
+                                <td>{{item.ID}}</td>
+                                <td>{{item.CustomerName}}</td>
+                                <td>{{item.CustomerEmail}}</td>
+                                <td>{{item.CustomerAddress}}</td>
+                                <td>{{item.CustomerPhone}}</td>
+                                <td>
+                                    <span style="text-align: center; margin: 0 20px;" ng-class="{'badge bg-danger' : item.Status==false, 'badge bg-green': item.Status==true}">{{item.Status |   statusFilterOrder}}</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary" ui-sref="order_edit({id:item.ID})">Cập Nhật</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+
+        </div>
+    </div>
+</section>

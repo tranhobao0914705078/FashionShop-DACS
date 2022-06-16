@@ -1,0 +1,103 @@
+﻿<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Trang Quản Lý Danh Mục Sản Phẩm</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
+                    <li class="breadcrumb-item"><a href="#">Sản Phẩm</a></li>
+                    <li class="breadcrumb-item"><a href="#">Danh Mục Sản Phẩm</a></li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Danh Mục Sản Phẩm</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="keyword" placeholder="Từ khóa">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="search()">Tìm kiếm</button>
+                        </span>
+                    </div><!-- /input-group -->
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-success" ui-sref="add_product_category">Thêm Mới</button>
+                    <button class="btn btn-danger" ng-click="deleteMultiple()" id="btnDelete" disabled>Xóa</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td><input type="checkbox" name="all" ng-click="selectAll()" /></td>
+                                <th style="width: 5%">ID</th>
+                                <th style="width: 55%">Tên Loại Sản Phẩm</th>
+                                <th style="width: 20%">Ngày Tạo</th>
+                                <th style="width: 10%">Trạng Thái</th>
+                                <th style="width: 10%">Chức Năng</th>
+                            </tr>
+                        </thead>
+                        <tbody> 
+                            <tr ng-repeat="item in productCategories">
+                                <td><input type="checkbox" name="all" ng-model="item.checked"/></td>
+                                <td>{{item.ID}}</td>
+                                <td>{{item.Name}}</td>
+                                <td>
+                                    <!--Dùng filter angular-->
+                                    {{item.CreatedDate  |   date:'dd/MM/yyyy'}}
+                                </td>
+                                <!--class="badge bg-danger-->
+                                <td>
+                                    <span ng-class="{'badge bg-danger' : item.Status==false, 'badge bg-green': item.Status==true}">{{item.Status |   statusFilter}}</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary" ui-sref="edit_product_category({id:item.ID})"><i class="fa fa-pen"></i></button>
+                                    <button class="btn btn-sm btn-danger" ng-click="deleteProductCategory(item.ID)"><i class="fa fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="6" >
+                                        <span class="fa-pull-right"> Trang: {{page + 1}} - Tổng sản phẩm: {{totalCount}}</span>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            <pager-directive style="margin: 0 20px"page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getProductCagories(page)"></pager-directive>
+        </div> 
+        <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
+
+</section>
+<!-- /.content -->

@@ -1,0 +1,11 @@
+D:\Project-ASP\FashionShop\FashionShop\FashionShop.Common\bin\Debug\FashionShop.Common.dll
+D:\Project-ASP\FashionShop\FashionShop\FashionShop.Common\bin\Debug\FashionShop.Common.pdb
+D:\Project-ASP\FashionShop\FashionShop\FashionShop.Common\obj\Debug\FashionShop.Common.csproj.CoreCompileInputs.cache
+D:\Project-ASP\FashionShop\FashionShop\FashionShop.Common\obj\Debug\FashionShop.Common.dll
+D:\Project-ASP\FashionShop\FashionShop\FashionShop.Common\obj\Debug\FashionShop.Common.pdb
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Common\bin\Debug\FashionShop.Common.dll
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Common\bin\Debug\FashionShop.Common.pdb
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Common\obj\Debug\FashionShop.Common.csproj.CoreCompileInputs.cache
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Common\obj\Debug\FashionShop.Common.dll
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Common\obj\Debug\FashionShop.Common.pdb
+D:\Project-ASP-2\Project-ASP\FashionShop\FashionShop\FashionShop.Common\obj\Debug\FashionShop.Common.csproj.AssemblyReference.cache

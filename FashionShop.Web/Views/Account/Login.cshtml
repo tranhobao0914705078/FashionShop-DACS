@@ -1,0 +1,37 @@
+﻿@model  FashionShop.Web.Models.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/shared/Layouts.cshtml";
+}
+<div class="account_grid">
+    <div class="login-right">
+        <h3>Đăng Nhập</h3>
+        @using (Html.BeginForm("Login", "Account", new { returnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+        {
+            <div>
+                <span>Tài Khoản<label></label></span>
+                @Html.TextBoxFor(model => model.UserName)
+            </div>
+            <div>
+                <span>Password<label></label></span>
+                @*@Html.PasswordFor(model => model.Password)*@
+                <input data-val="true" data-val-required="Bạn cần nhập mật khẩu" id="Password" name="Password" type="password">
+            </div>
+            <div>
+                @Html.CheckBoxFor(model => model.RememberMe)
+                Nhớ mật khẩu
+            </div>
+            <a class="forgot" href="#">Forgot Your Password?</a>
+            <input type="submit" value="Login">
+
+
+        }
+        @Html.Partial("_ExternalLoginsListPartial", new FashionShop.Web.Models.ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+    </div>
+    <div class=" login-left">
+        <h3>Chưa có tài khoản?</h3>
+        <p>Nhấp vào link bên dưới để tạo tài khoản!!!</p>
+        <a class="acount-btn" href="/dang-ky.html">Đăng Ký Tài Khoản</a>
+    </div>
+    <div class="clearfix"> </div>
+</div>

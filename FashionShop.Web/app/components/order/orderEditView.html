@@ -1,0 +1,83 @@
+﻿<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Trang Cập Nhật Hóa Đơn</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
+                    <li class="breadcrumb-item"><a href="#">Hóa Đơn</a></li>
+                    <li class="breadcrumb-item"><a href="#">Cập Nhật</a></li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <!-- Horizontal Form -->
+    <div class="card card-info">
+        <div class="card-header">
+            <h3 class="card-title">Khách Hàng: {{Order.CustomerName}}</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form class="form-horizontal" novalidate name="frmUpdateOrder" role="form" ng-submit="EditOrder()">
+            <div class="card-body">
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Tên Khách Hàng</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="customername" ng-model="Order.CustomerName">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Địa Chỉ</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="customeraddress" ng-model="Order.CustomerAddress">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="description" ng-model="Order.CustomerEmail">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Số Điện Thoại</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="customerphone" ng-model="Order.CustomerPhone">
+                    </div>
+                </div>
+                <!--<div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Tên Sản Phẩm</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="name" ng-model="product.Name">
+                    </div>
+                </div>-->
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Ghi Chú</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" name="customermessage" ckeditor="ckeditorOptions" ng-model="Order.CustomerMessage"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="offset-sm-2 col-sm-10">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="status" ng-model="Order.Status" ng-checked="Order.Status"> Xác Nhận
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <button ui-sref="order" class="btn btn-default float-right">Hủy</button>
+                <button type="submit" class="btn btn-success fa-pull-right">Lưu</button>
+            </div>
+            <!-- /.card-footer -->
+        </form>
+    </div>
+    <!-- /.card -->
+</section>

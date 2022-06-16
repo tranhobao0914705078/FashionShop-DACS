@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Drew House Fashion</title>
+    <meta name="description" content="@ViewBag.MetaKeyword"/>
+    <meta name="keywords" content="@ViewBag.MetaDescription"/>
+    <link href="~/Assets/client/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!--theme-style-->
+    <link href="~/Assets/client/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Assets/client/css/custom.css" rel="stylesheet" />
+    <link href="~/Assets/admin/fontawesome-free/css/fontawesome.css" rel="stylesheet" />
+    <link href="~/Assets/client/fontawesome-free-6.1.1-web/css/fontawesome.css" rel="stylesheet" />
+    <link href="~/Assets/admin/libs/jquery-ui/themes/smoothness/jquery-ui.min.css" rel="stylesheet" />
+    <!--//theme-style-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!--//fonts-->
+</head>
+<style>
+    .logo-head {
+        width: 200px;
+        height: 100px;
+        margin: -19px 0;
+    }
+
+    .header-view {
+        background-color: cornflowerblue;
+        height: 100px;
+    }
+
+    .search-edit {
+        border-radius: 20px;
+        width: 400px;
+    }
+
+    .ui-menu {
+        position: relative;
+        color: #808080;
+        margin: 58px 16px;
+        min-width: 3px;
+        max-width: 395px;
+    }
+</style>
+<body>
+    <!--header-->
+    @{Html.RenderAction("Header", "Home");}
+    <!---->
+    <div class="container">
+        @RenderBody()
+        @{Html.RenderAction("Category", "Home");}
+
+    </div>
+    <!---->
+    <!--footer-->
+    @{Html.RenderAction("Footer", "Home");}
+    <div class="clearfix"> </div>
+    <script src="~/Assets/client/js/jquery.min.js"></script>
+    <script src="~/Assets/admin/libs/jquery-ui/jquery-ui.min.js"></script>
+    @*<script src="~/Assets/admin/libs/mustache/mustache.js"></script>*@
+    <script src="~/Assets/admin/libs/mustache2/mustache2.js"></script>
+    <script src="~/Assets/admin/libs/numeral/numeral.min.js"></script>
+    <script src="~/Assets/client/js/common.js"></script>
+    <!--script-->
+    @RenderSection("footerJS", required: false)
+</body>
+</html> 

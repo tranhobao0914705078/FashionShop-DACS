@@ -1,0 +1,68 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "angular.js@1.8.3",
+      "destination": "Assets/admin/libs/"
+      //"files": []
+    },
+    {
+      "library": "angular-ui-router@1.0.30",
+      "destination": "Assets/admin/libs/"
+      //"files": []
+    },
+    {
+      "library": "jquery@3.6.0",
+      "destination": "Assets/admin/libs/JQuery/"
+      //"files": []
+    },
+    {
+      "library": "bootstrap@5.1.3",
+      "destination": "Assets/admin/libs/bootstrap/"
+      //"files": []
+    },
+    {
+      "library": "toastr.js@2.1.4",
+      "destination": "Assets/admin/libs/toastr/"
+      //"files": []
+    },
+    {
+      "library": "bootbox.js@5.5.3",
+      "destination": "Assets/admin/libs/bootbox/"
+      //"files": []
+    },
+    {
+      "library": "ng-ckeditor@0.2.1",
+      "destination": "Assets/admin/libs/ng-ckeditor/"
+    },
+    {
+      "library": "ckeditor@4.19.0",
+      "destination": "Assets/admin/libs/ckeditor/"
+    },
+    {
+      "library": "angular-local-storage@0.7.1",
+      "destination": "Assets/admin/libs/angular-local-storage/"
+    },
+    {
+      "library": "angular-loading-bar@0.9.0",
+      "destination": "Assets/admin/libs/angular-loading-bar/"
+    },
+    {
+      "library": "jqueryui@1.12.1",
+      "destination": "Assets/admin/libs/jquery-ui/"
+    },
+    {
+      "library": "mustache.js@4.2.0",
+      "destination": "Assets/admin/libs/mustache/"
+    },
+    {
+      "library": "numeral.js@2.0.6",
+      "destination": "Assets/admin/libs/numeral/"
+    },
+    {
+      "library": "checklist-model@1.0.0",
+      "destination": "Assets/admin/libs/checklist-model/"
+    }
+  ]
+}

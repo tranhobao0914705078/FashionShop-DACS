@@ -1,0 +1,62 @@
+﻿@model FashionShop.Web.Models.FeedbackViewModel
+@using BotDetect.Web.Mvc;
+<link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Liên hệ";
+    ViewBag.MetaKeyword = "liên hệ";
+    ViewBag.MetaDescription = "Thông tin liên hệ của FASHION SHOP";
+    Layout = "~/Views/shared/Layouts.cshtml";
+}
+
+<div class="main">
+    <div class="reservation_top">
+        <div class="contact_right">
+            <h3>Thông Tin Liên Hệ</h3>
+            <address class="address">
+                <dd>Địa Chỉ: <span style="color: #000;">@Model.ContactDetail.Adderess</span></dd>
+                <dl>
+                    <dt> </dt>
+                    <dd>Điện Thoại:<span span style="color: #000;"> @Model.ContactDetail.Phone</span></dd>
+                    <dd>E-mail:&nbsp; <a href="mailto: @(Model.ContactDetail.Email)">@(Model.ContactDetail.Email)</a></dd>
+                </dl>
+            </address>
+            <div class="clearfix"></div>
+            <div>
+                <iframe style="width: 100%;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.4206639905988!2d106.78291401458975!3d10.855574792267845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175276e7ea103df%3A0xb6cf10bb7d719327!2zSHV0ZWNoIEtodSBFIC0gVHJ1bmcgVMOibSDEkMOgbyBU4bqhbyBOaMOibiBM4buxYyBDaOG6pXQgTMaw4bujbmcgQ2Fv!5e0!3m2!1svi!2s!4v1654236506252!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="reservation_top">
+        <div class="contact_right">
+            <h3>Gửi thông tin liên hệ</h3>
+            <div class="contact-form">
+                @using (Html.BeginForm("SendFeedback", "Contact", FormMethod.Post))
+                {
+                    if (ViewData["SuccessMsg"] != null)
+                    {
+                        <div class="alert alert-success" role="alert">
+                            <strong>Chúc mừng bạn! </strong> gửi phản hồi thành công.
+                            <br />Chúng tôi sẽ liên hệ lại sớm nhất có thể.
+                        </div>
+                    }
+                    @Html.ValidationSummary(false, "", new { @class = "error" });
+                    <p style="color: #000; font-size: 2rem; font-weight: 700">Tên</p>
+                    <input class="textbox" style="color: #000;" data-val="true" placeholder="Nhập tên..." data-val-maxlength="Tên vượt quá ký tự cho phép!!!" data-val-maxlength-max="250" data-val-required="The Name field is required." id="Name" name="Name" type="text" value="">
+                    @*@Html.TextBoxFor(model => model.Name, new { @class = "textbox" });*@
+                    <p style="color: #000; font-size: 2rem; font-weight: 700">Email</p>
+                    <input class="textbox" style="color: #000;" placeholder="Nhập email..." data-val="true" data-val-maxlength="Email vượt quá ký tự cho phép!!!" data-val-maxlength-max="250" id="Email" name="Email" type="text" value="">
+                    @*@Html.TextBoxFor(model => model.Email, new { @class = "textbox" });*@
+                    <p style="color: #000; font-size: 2rem; font-weight: 700">Phản Hồi</p>
+                    <textarea cols="20" style="color: #000;" placeholder="Nhập phản hồi..." data-val="true" data-val-maxlength="Tin nhắn vượt quá ký tự cho phép!!!" data-val-maxlength-max="250" id="Message" name="Message" rows="2"></textarea>
+                    @*@Html.TextAreaFor(model => model.Message);*@
+                    <p style="color: #000; font-size: 2rem; font-weight: 700">Nhập mã Captcha</p>
+                    MvcCaptcha contactCaptcha = new MvcCaptcha("contactCaptcha");
+                    @Html.Captcha(contactCaptcha)
+                    @Html.TextBox("CaptchaCode")
+                    <input type="submit" value="Send" />
+                    <div class="clearfix"></div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

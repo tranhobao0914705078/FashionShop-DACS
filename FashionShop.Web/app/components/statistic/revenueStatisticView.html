@@ -1,0 +1,98 @@
+﻿<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Trang Thêm Mới Sản Phẩm</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
+                    <li class="breadcrumb-item"><a href="#">Sản Phẩm</a></li>
+                    <li class="breadcrumb-item"><a ui-sref="products">Danh Sách</a></li>
+                    <li class="breadcrumb-item"><a href="#">Thêm Mới Sản Phẩm</a></li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <!-- Left col -->
+        <section class="col-lg-7">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-chart-pie mr-1"></i>
+                        Sales
+                    </h3>
+                    <div class="card-tools">
+                        <ul class="nav nav-pills ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Doanh Thu</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- /.card-header -->
+                <div class="card-body">
+                    <div class="tab-content p-0">
+                        <!-- Morris chart - Sales -->
+                        <canvas id="bar" class="chart chart-bar" chart-data="chartdata" chart-labels="labels" chart-series="series"></canvas>
+                    </div>
+                </div><!-- /.card-body -->
+            </div>
+        </section>
+        <!-- /.Left col -->
+        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+        <section class="col-lg-5">
+            <!-- Map card -->
+            <div class="card">
+                <div class="card-header border-0">
+                    <h3 class="card-title">
+                        <i class="fas fa-map-marker-alt mr-1"></i>
+                        Dữ Liệu Thống Kê
+                    </h3>
+                    <!-- card tools -->
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-primary btn-sm daterange" title="Date range">
+                            <i class="far fa-calendar-alt"></i>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-sm" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.card-tools -->
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td>Ngày</td>
+                                <td>Doanh Số</td>
+                                <td>Lợi Nhuận (VND)</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in tabledata">
+                                <td>
+                                    {{item.Date | date}}
+                                </td>
+                                <td>
+                                    {{item.Revenues | number}}
+                                </td>
+                                <td>
+                                    {{item.Benefit | number}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body-->
+            </div>
+        </section>
+        <!-- right col -->
+    </div>
+</section>
